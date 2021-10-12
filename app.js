@@ -9,20 +9,21 @@ const humidityWeater = document.querySelector('.humidity')
 
 btn.addEventListener('click', weather)
 
-function weather(e) {
+async function weather(e) {
   e.preventDefault()
-  const city = inputCity.value
-  fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=e77fa778cddc1c86d94bf65e5f487590`)
-    .then(data => data.json() )
-      .then(jsonData => {
-        console.log(jsonData);
-          cityName.innerHTML = jsonData.name
-            iconWeather.setAttribute("src", `http://openweathermap.org/img/wn/${jsonData.weather[0].icon}.png`) 
-              desWeather.innerHTML = jsonData.weather[0].description
-                tempWheater.innerHTML = Math.round(jsonData.main.temp) + "°"
-                  humidityWeater.innerHTML = jsonData.main.humidity + "%"
-
-      })
+    try {
+      const city = inputCity.value
+        const data = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=e77fa778cddc1c86d94bf65e5f487590`)
+          const dataJason = await data.json() 
+            console.log(dataJason);
+              cityName.innerHTML = dataJason.name
+                iconWeather.setAttribute("src", `http://openweathermap.org/img/wn/${dataJason.weather[0].icon}.png`) 
+                  desWeather.innerHTML = dataJason.weather[0].description
+                    tempWheater.innerHTML = Math.round(dataJason.main.temp) + "°"
+                      humidityWeater.innerHTML = dataJason.main.humidity + "%"
+    } catch (error) {
+      console.log('City not found')
+    }
 }
 
 
