@@ -20,7 +20,7 @@ async function weather(e) {
           const dataJason = await data.json() 
             console.log(dataJason);
               cityName.innerHTML = dataJason.name
-                iconWeather.setAttribute("src", `http://openweathermap.org/img/wn/${dataJason.weather[0].icon}.png`) 
+                iconWeather.setAttribute("src", `img/icon/${dataJason.weather[0].icon}.svg`) 
                   desWeather.innerHTML = dataJason.weather[0].description
                     tempWheater.innerHTML = Math.round(dataJason.main.temp) + "°"
                       humidityWeater.innerHTML = dataJason.main.humidity + "%"
