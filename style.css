@@ -1,11 +1,25 @@
 .Container{
     display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 90vh;
+}
+
+.content{
+    display: flex;
     flex-direction: column;
     align-items: center;
     width: 300px;
-    background-color: blanchedalmond;
+    background-color: #474747;
+    margin: 0 auto;
+    border-radius: 15px;
+    color: #FFF;
 }
 
+.formSearch{
+    padding-top: 16px;
+}
 .iconWeather{
     height: 150px;
 }
