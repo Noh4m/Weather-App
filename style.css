@@ -10,16 +10,53 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 300px;
+    width: 350px;
+    height: 452px;
     background-color: #474747;
     margin: 0 auto;
     border-radius: 15px;
     color: #FFF;
 }
+.cityName{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2em;
+    font-weight: 500;
+    margin-bottom: 0px;
+}
+.desWeather,
+.temp,
+.humidity{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.3em;
+    font-weight: 400;
+    
+}
 
 .formSearch{
-    padding-top: 16px;
+    padding-top: 24px;
 }
 .iconWeather{
     height: 150px;
+}
+
+
+.cityInput{
+    height: 30px ;
+    padding-left: 15px;
+    margin-right: 15px;
+    border-radius: 15px;
+    border: none ;
+}
+
+.btnSearch{
+    height: 30px ;
+    width: 70px;
+    border-radius: 15px;
+    border: none ;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: .8em;
+    font-weight: 500;
+}
+.cityInput:focus{
+    outline: none;
 }
